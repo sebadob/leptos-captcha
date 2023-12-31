@@ -1,0 +1,16 @@
+[package]
+name = "leptos-captcha"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70.0"
+license = "MIT"
+authors = ["Sebastian Dobe <sebastiandobe@mailbox.org"]
+categories = ["wasm", "web-programming"]
+keywords = ["leptos", "wasm", "web"]
+description = "Simple Captcha / PoW component for Leptos"
+readme = "README.md"
+repository = "https://github.com/sebadob/leptos-captcha"
+
+[dependencies]
+leptos = "0.5.4"
+spow = "0.2.0"
