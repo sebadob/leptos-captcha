@@ -22,3 +22,5 @@ There is an [example](https://github.com/sebadob/leptos-captcha/tree/main/exampl
 At this moment, it runs thread local. This means if you have a too high difficulty, it will block the UI.
 An improvement with outsourcing it to a web worker will probably come at some point, even though you should not really
 need it in production.
+
+![screenshot](https://github.com/sebadob/leptos-captcha/blob/main/leptos-captcha.png)
