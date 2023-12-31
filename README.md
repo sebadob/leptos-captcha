@@ -13,6 +13,7 @@ can of course use it independently and build a custom solution, if you like. In 
 No inline-css is being used on purpose for 2 reasons:
 - you are not forced to use an `unsafe-inline` CSP for `style-src`, if you don't like that
 - you can customize the whole look yourself
+  
 For these reasons, you need to import the `css/leptos-captcha.css` in your application in what ever way fits your needs,
 or simply copy & paste it into your current `main.scss`.
 
