@@ -12,5 +12,5 @@ readme = "README.md"
 repository = "https://github.com/sebadob/leptos-captcha"
 
 [dependencies]
-leptos = "0.5.4"
+leptos = "0.6.0-beta"
 spow = "0.2.0"

@@ -13,7 +13,6 @@ can of course use it independently and build a custom solution, if you like. In 
 No inline-css is being used on purpose for 2 reasons:
 - you are not forced to use an `unsafe-inline` CSP for `style-src`, if you don't like that
 - you can customize the whole look yourself
-  
 For these reasons, you need to import the `css/leptos-captcha.css` in your application in what ever way fits your needs,
 or simply copy & paste it into your current `main.scss`.
 
@@ -25,3 +24,8 @@ An improvement with outsourcing it to a web worker will probably come at some po
 need it in production.
 
 ![screenshot](https://github.com/sebadob/leptos-captcha/blob/main/leptos-captcha.png)
+
+## Leptos v0.6
+
+You can use this component with the current leptos v0.6 beta. There is no prerelease version, but you can refer to this
+git repo's main branch with `leptos-captcha = { git = "https://github.com/sebadob/leptos-captcha" }`
