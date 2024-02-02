@@ -25,7 +25,7 @@ need it in production.
 
 ![screenshot](https://github.com/sebadob/leptos-captcha/blob/main/leptos-captcha.png)
 
-## Leptos v0.6
+## Leptos Compatibility
 
-You can use this component with the current leptos v0.6 beta. There is no prerelease version, but you can refer to this
-git repo's main branch with `leptos-captcha = { git = "https://github.com/sebadob/leptos-captcha" }`
+Leptos 0.5: leptos-captcha 0.1
+Leptos 0.6: leptos-captcha 0.2+
