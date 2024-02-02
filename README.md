@@ -27,5 +27,5 @@ need it in production.
 
 ## Leptos Compatibility
 
-Leptos 0.5: leptos-captcha 0.1
+Leptos 0.5: leptos-captcha 0.1  
 Leptos 0.6: leptos-captcha 0.2+
