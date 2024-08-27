@@ -1,8 +1,25 @@
 use leptos::ev::SubmitEvent;
-use leptos::*;
+use leptos::prelude::*;
 use leptos_captcha::Captcha;
 use leptos_meta::*;
-use leptos_router::*;
+
+pub fn shell(options: LeptosOptions) -> impl IntoView {
+    view! {
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <AutoReload options=options.clone() />
+                <HydrationScripts options/>
+                <MetaTags/>
+            </head>
+            <body>
+                <App/>
+            </body>
+        </html>
+    }
+}
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -43,21 +60,23 @@ pub async fn get_pow() -> Result<String, ServerFnError> {
 #[server]
 pub async fn post_form(pow: String, name: String) -> Result<String, ServerFnError> {
     use leptos_captcha::spow::pow::Pow;
+
+    log!("pow: {}, name: {}", pow, name);
     Pow::validate(&pow)?;
+    log!("pow is valid on the server");
 
     Ok(format!("Hello {} - your request was valid", name))
 }
 
 #[component]
 fn FormExample() -> impl IntoView {
-    let action_save = Action::<PostForm, _>::server();
-    let is_pending = create_rw_signal(None);
+    let action_save: ServerAction<PostForm> = ServerAction::new();
+    let is_pending = RwSignal::new(None);
 
     let on_submit = move |ev: SubmitEvent| {
-        if let Ok(mut data) = PostForm::from_event(&ev) {
-            ev.prevent_default();
-            action_save.set_pending(true);
+        ev.prevent_default();
 
+        if let Ok(mut data) = PostForm::from_event(&ev) {
             // Currently, the Captcha validation is running thread local.
             // This means a too high difficulty will block the thread.
             // The default of 20 is reasonable for a release build, but
@@ -73,7 +92,7 @@ fn FormExample() -> impl IntoView {
     };
 
     view! {
-        <ActionForm action=action_save on:submit=on_submit>
+        <form on:submit=on_submit>
             <input name="name" placeholder="Your Name" />
 
             // The Captcha component adds a hidden input with the name `pow` (Proof of Work) to
@@ -85,10 +104,9 @@ fn FormExample() -> impl IntoView {
             <p>
                 {move || action_save.value()
                     .get()
-                    .map(|r| r.unwrap())
-                    .unwrap_or_default()
+                    .map(|r| r.unwrap_or_default())
                 }
             </p>
-        </ActionForm>
+        </form>
     }
 }
