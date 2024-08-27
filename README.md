@@ -13,8 +13,8 @@ can of course use it independently and build a custom solution, if you like. In 
 No inline-css is being used on purpose for 2 reasons:
 - you are not forced to use an `unsafe-inline` CSP for `style-src`, if you don't like that
 - you can customize the whole look yourself
-For these reasons, you need to import the `css/leptos-captcha.css` in your application in what ever way fits your needs,
-or simply copy & paste it into your current `main.scss`.
+  For these reasons, you need to import the `css/leptos-captcha.css` in your application in what ever way fits your needs,
+  or simply copy & paste it into your current `main.scss`.
 
 There is an [example](https://github.com/sebadob/leptos-captcha/tree/main/examples/axum-example) based on the official
 `start-axum` template. Just take a look at it, and it should (hopefully) be clear, how to use this component.
@@ -27,5 +27,6 @@ need it in production.
 
 ## Leptos Compatibility
 
+Leptos 0.7.0-beta2: leptos-captcha 0.3.0-beta1
+Leptos 0.6: leptos-captcha 0.2
 Leptos 0.5: leptos-captcha 0.1  
-Leptos 0.6: leptos-captcha 0.2+
