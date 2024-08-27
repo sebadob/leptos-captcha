@@ -27,6 +27,6 @@ need it in production.
 
 ## Leptos Compatibility
 
-Leptos 0.7.0-beta2: leptos-captcha 0.3.0-beta1
-Leptos 0.6: leptos-captcha 0.2
+Leptos 0.7.0-beta2: leptos-captcha 0.3.0-beta1  
+Leptos 0.6: leptos-captcha 0.2  
 Leptos 0.5: leptos-captcha 0.1  
