@@ -46,7 +46,7 @@ pub async fn get_pow() -> Result<String, ServerFnError> {
     // I highly suggest, that you create a global static variable in your app
     // as an indicator if you are in DEV / DEBUG mode, or something like that.
     // You could pull it from the context, or where ever it makes sense for you.
-    // In debug mode, the speed of the verification in the UI is a low slower and
+    // In debug mode, the speed of the verification in the UI is a lot slower, and
     // you should just use the lowest difficulty of `10` during development.
     const DEV_MODE: bool = true;
 
@@ -61,9 +61,8 @@ pub async fn get_pow() -> Result<String, ServerFnError> {
 pub async fn post_form(pow: String, name: String) -> Result<String, ServerFnError> {
     use leptos_captcha::spow::pow::Pow;
 
-    log!("pow: {}, name: {}", pow, name);
     Pow::validate(&pow)?;
-    log!("pow is valid on the server");
+    log!("pow {} is valid on the server", pow);
 
     Ok(format!("Hello {} - your request was valid", name))
 }
@@ -77,12 +76,12 @@ fn FormExample() -> impl IntoView {
         ev.prevent_default();
 
         if let Ok(mut data) = PostForm::from_event(&ev) {
-            // Currently, the Captcha validation is running thread local.
+            // The Captcha validation is running thread local.
             // This means a too high difficulty will block the thread.
             // The default of 20 is reasonable for a release build, but
             // way too high for development.
             //
-            // The validation might me improved in the future by using
+            // The validation might be improved in the future by using
             // a web worker for this purpose, but this is not yet implemented.
             leptos_captcha::pow_dispatch(get_pow, is_pending, move |pow| {
                 data.pow = pow.unwrap();
