@@ -3,8 +3,7 @@
 #![doc = include_str!("../README.md")]
 
 use core::future::Future;
-use leptos::prelude::*;
-use leptos::spawn::spawn_local;
+use leptos::{logging::log, prelude::*, task::spawn_local};
 
 // re-export the Pow for ease of use
 pub use spow;
