@@ -1,6 +1,6 @@
 # axum-example
 
-This exmaple shows how simple it is to use the `leptos-captcha` crate.
+This example shows how simple it is to use the `leptos-captcha` crate.
 
 This example is based on the official [start-axum](https://github.com/leptos-rs/start-axum) example.  
 Differences to the original template:

@@ -1,8 +1,8 @@
 [package]
 name = "leptos-captcha"
-version = "0.3.0-beta1"
+version = "0.3.0"
 edition = "2021"
-rust-version = "1.76.0"
+rust-version = "1.81.0"
 license = "MIT"
 authors = ["Sebastian Dobe <sebastiandobe@mailbox.org"]
 categories = ["wasm", "web-programming"]
@@ -13,4 +13,4 @@ repository = "https://github.com/sebadob/leptos-captcha"
 
 [dependencies]
 leptos = "0.7"
-spow = "0.3.0"
+spow = { version = "0.4.0", features = ["server", "client"] }

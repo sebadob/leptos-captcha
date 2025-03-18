@@ -60,6 +60,7 @@ pub async fn get_pow() -> Result<String, ServerFnError> {
 #[server]
 pub async fn post_form(pow: String, name: String) -> Result<String, ServerFnError> {
     use leptos_captcha::spow::pow::Pow;
+    use leptos::logging::log;
 
     Pow::validate(&pow)?;
     log!("pow {} is valid on the server", pow);
