@@ -1,6 +1,6 @@
 [package]
 name = "leptos-captcha"
-version = "0.3.0"
+version = "0.4.0"
 edition = "2021"
 rust-version = "1.81.0"
 license = "MIT"
@@ -12,5 +12,5 @@ readme = "README.md"
 repository = "https://github.com/sebadob/leptos-captcha"
 
 [dependencies]
-leptos = "0.7"
-spow = { version = "0.4.0", features = ["server", "client"] }
+leptos = "0.8"
+spow = { version = "0.6.0", features = ["server", "client"] }

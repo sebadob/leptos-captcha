@@ -26,8 +26,19 @@ need it in production.
 
 ![screenshot](https://github.com/sebadob/leptos-captcha/blob/main/leptos-captcha.png)
 
+## WASM getrandom Backend
+
+If you compile to WASM, you need to specify the getrandom backend to use. To do this, create `.cargo/config.toml` and 
+paste:
+
+```toml
+[target.wasm32-unknown-unknown]
+rustflags = ['--cfg', 'getrandom_backend="wasm_js"']
+```
+
 ## Leptos Compatibility
 
+Leptos 0.8: leptos-captcha 0.4  
 Leptos 0.7: leptos-captcha 0.3  
 Leptos 0.6: leptos-captcha 0.2  
 Leptos 0.5: leptos-captcha 0.1  
